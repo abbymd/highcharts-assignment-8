@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link href="css/index.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+        <title>FBI Crime Data</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+         </script>
+        <script src="js/highcharts.js"></script>
+        
+</head>
+<body>
+<h1 class="title">FBI Crime Data</h1>
+<section>
+<div id="container" style="width:100%; height:550px;"></div>
+<script>
+$(function () { 
+    $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'U.S. Law Enforcement Officers Killed On Duty'
+        },
+        xAxis: {
+            categories: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014']
+        },
+        yAxis: {
+            title: {
+                text: 'Number of Officers'
+            }
+        },
+        series: [{
+            name: 'Feloniously Killed',
+            data: [55, 48, 57, 41, 48, 56, 72, 48, 27, 51]
+        }, {
+            name: 'Accidentally Killed',
+            data: [67, 66, 83, 68, 47, 72, 53, 47, 49, 45]
+        }]
+    });
+});
+</script
+<script type="text/javascript" src="/js/themes/gray.js"></script>
+<figcaption><b>Source</b>: The Federal Bureau of Investigation, <a href="https://www.fbi.gov/about-us/cjis/ucr/ucr-publications">Uniform Crime Reports</a></figcaption>
+</section>
+
+<section>
+<div id="containers" style="width:100%; height:550px;"></div>
+
+<script>
+$(function () {
+
+    $(document).ready(function () {
+
+        // Build the chart
+        $('#containers').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Officers Feloniously Killed by Region, 2005-2014'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: "Officers Killed",
+                colorByPoint: true,
+                data: [{
+                    name: "South",
+                    y: 227.00
+                }, {
+                    name: "Midwest",
+                    y: 88.00,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: "West",
+                    y: 108.00
+                }, {
+                    name: "North East",
+                    y: 85.00
+                }, {
+                    name: "Puerto Rico",
+                    y: 21.00
+                }, {
+                    name: "Virgin Islands",
+                    y: 1.00
+                }]
+            }]
+        });
+    });
+});
+</script>
+<figcaption><b>Source</b>: The Federal Bureau of Investigation, <a href="https://www.fbi.gov/about-us/cjis/ucr/ucr-publications">Uniform Crime Reports</a></figcaption>
+</section>
+
+<section>
+<h1>U.S. Officer On Duty Deaths</h1>
+<p>
+Between 2005 and 2014, 1,100 U.S. officers were killed on duty, whether accidentally or feloniously. These deaths occurred as a result of anything from arrest situations, traffic pursuits/stops, or ambush situations, to handling people with mental illnesses, or responding to disturbance calls. Taking a closer look at the data, we can see that the region with the most officers killed feloniously is the South. This may be due to high racial tensions in the South. Especially recently, the news has been consistent with stories of police brutality towards African Americans, with cases like Trayvon Martin, Mike Brown, and Sandra Bland. Two of these cases, Trayvon Martin and Sandra Bland, happened in the South (Florida and Texas, respectively).
+</p>
+
+<p><i>Written by Abigail Drueke</i></p>
+</section>
+
+
+</body>
+</html>
